@@ -42,6 +42,7 @@ nav:
       - Installation & Setup: getting-started.md
       - Quick Start Tutorial: quick-start.md
   - Documentation:
+      - User Manual: user-manual.md
       - Technical Reference: technical-reference.md
       - Animation Authoring Guide: animation-guide.md
       - FAQ: faq.md
