@@ -1,0 +1,3970 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Motion Matching for Unity - Community maintained fork with Unity 2022+ support">
+      
+      
+      
+        <link rel="canonical" href="https://frost-blade-studios.github.io/Motion-Matching-for-Unity/user-manual/">
+      
+      
+        <link rel="prev" href="../quick-start/">
+      
+      
+        <link rel="next" href="../technical-reference/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>User Manual - MxM for Unity (Community Fork)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-manual" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MxM for Unity (Community Fork)" class="md-header__button md-logo" aria-label="MxM for Unity (Community Fork)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MxM for Unity (Community Fork)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              User Manual
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Frost-Blade-Studios/MxM
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting-started/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../resources/" class="md-tabs__link">
+          
+  
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MxM for Unity (Community Fork)" class="md-nav__button md-logo" aria-label="MxM for Unity (Community Fork)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MxM for Unity (Community Fork)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Frost-Blade-Studios/MxM
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Manual
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anim-data-scriptableobject" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anim Data (ScriptableObject)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mxmanimator-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MxMAnimator (Component)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mxmtrajectorygenerator-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MxMTrajectoryGenerator (Component)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anim-data-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anim Data Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anim Data Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-anim-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Anim Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pose-interval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pose Interval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blending-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blending Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skeleton-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skeleton Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skeleton Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joint-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Joint Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joint-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Joint Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trajectory Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trajectory Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trajectory Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Composites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-composite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a Composite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composite Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-clips-to-composite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Clips to Composite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clip-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clip Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-pre-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting Pre-Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Runtime Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mxmanimator-component_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MxMAnimator Component
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MxMAnimator Component">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inspector-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspector Parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inspector Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blending
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mxmtrajectorygenerator-component_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MxMTrajectoryGenerator Component
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MxMTrajectoryGenerator Component">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inspector-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspector Parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inspector Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trajectory Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug Visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-and-trajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input and Trajectory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input and Trajectory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input Profiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-input-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Input Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-legacy-input-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration (Legacy Input Example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trajectory Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Phases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-definition-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Definition Asset
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Definition Asset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-event-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Event Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triggering-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triggering Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tag-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tag System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assigning-tags-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assigning Tags (Editor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-tags-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Tags (Runtime)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibration-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripting-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripting API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scripting API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responding-to-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responding to Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-trajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Trajectory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-processing-optimizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Processing Optimizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-optimizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Optimizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-optimizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Optimizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profiling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-character-controllers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With Character Controllers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-ik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With IK
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Reference Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-settings-by-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Settings by Platform
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Settings by Platform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desktopconsole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop/Console
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-high-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile (High-End)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-low-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile (Low-End)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../technical-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animation Authoring Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Original PDFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anim-data-scriptableobject" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anim Data (ScriptableObject)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mxmanimator-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MxMAnimator (Component)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mxmtrajectorygenerator-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MxMTrajectoryGenerator (Component)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anim-data-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anim Data Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anim Data Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-anim-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Anim Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pose-interval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pose Interval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blending-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blending Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skeleton-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skeleton Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skeleton Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joint-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Joint Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joint-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Joint Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trajectory Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trajectory Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trajectory Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Composites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-composite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a Composite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composite Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-clips-to-composite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Clips to Composite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clip-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clip Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-pre-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting Pre-Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Runtime Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mxmanimator-component_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MxMAnimator Component
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MxMAnimator Component">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inspector-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspector Parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inspector Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blending
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mxmtrajectorygenerator-component_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MxMTrajectoryGenerator Component
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MxMTrajectoryGenerator Component">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inspector-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspector Parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inspector Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trajectory Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug Visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-and-trajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input and Trajectory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input and Trajectory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input Profiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-input-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Input Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-legacy-input-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration (Legacy Input Example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trajectory Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Phases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-definition-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Definition Asset
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Definition Asset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-event-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Event Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triggering-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triggering Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tag-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tag System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assigning-tags-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assigning Tags (Editor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-tags-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Tags (Runtime)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibration-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripting-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripting API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scripting API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responding-to-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responding to Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-trajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Trajectory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-processing-optimizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Processing Optimizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-optimizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Optimizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-optimizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Optimizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profiling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-character-controllers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With Character Controllers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-ik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With IK
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Reference Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-settings-by-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Settings by Platform
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Settings by Platform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desktopconsole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop/Console
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-high-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile (High-End)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-low-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile (Low-End)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity/edit/main/docs/user-manual.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="user-manual">User Manual</h1>
+<p>Complete reference documentation for Motion Matching for Unity (MxM).</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#system-overview">System Overview</a></li>
+<li><a href="#core-components">Core Components</a></li>
+<li><a href="#anim-data-configuration">Anim Data Configuration</a></li>
+<li><a href="#runtime-components">Runtime Components</a></li>
+<li><a href="#input-and-trajectory">Input and Trajectory</a></li>
+<li><a href="#event-system">Event System</a></li>
+<li><a href="#advanced-features">Advanced Features</a></li>
+<li><a href="#scripting-api">Scripting API</a></li>
+<li><a href="#performance-optimization">Performance Optimization</a></li>
+<li><a href="#integration-patterns">Integration Patterns</a></li>
+</ol>
+<hr />
+<h2 id="system-overview">System Overview</h2>
+<h3 id="architecture">Architecture</h3>
+<p>Motion Matching for Unity (MxM) consists of two main phases:</p>
+<p><strong>Pre-Processing (Editor Time):</strong>
+- Animation clips → Processed into searchable database
+- Stored as <strong>Anim Data</strong> ScriptableObject
+- One-time process per animation library</p>
+<p><strong>Runtime (Play Mode):</strong>
+- Real-time pose search and matching
+- Uses Burst-compiled Jobs for performance
+- Automatic blend and playback</p>
+<h3 id="data-flow">Data Flow</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌──────────────────────────────────────────────────────────┐
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│                     PRE-PROCESSING                       │
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├──────────────────────────────────────────────────────────┤
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│                                                          │
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│  Animation Clips (.anim)                                 │
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│         ↓                                                │
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│  Sample Poses at Interval (e.g., every 0.1s)             │
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│         ↓                                                │
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│  Calculate Trajectories for each pose                    │
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│         ↓                                                │
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│  Build Feature Vectors                                   │
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│         ↓                                                │
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│  Create KD-Tree acceleration structure                   │
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│         ↓                                                │
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│  Anim Data Asset (ready for runtime)                     │
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│                                                          │
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>└──────────────────────────────────────────────────────────┘
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>┌──────────────────────────────────────────────────────────┐
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│                        RUNTIME                           │
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>├──────────────────────────────────────────────────────────┤
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│                                                          │
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│  Player Input                                            │
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>│         ↓                                                │
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│  Trajectory Generator (desired path)                     │
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│         ↓                                                │
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│  MxMAnimator                                             │
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>│    ├── Current Pose                                      │
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>│    ├── Desired Trajectory                                │
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>│    ├── Active Tags                                       │
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>│    └──→ Search Anim Data (Burst Job)                     │
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>│              ↓                                           │
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>│         Best Match Frame                                 │
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>│              ↓                                           │
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>│         Blend &amp; Apply to Character                       │
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>│                                                          │
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>└──────────────────────────────────────────────────────────┘
+</span></code></pre></div>
+<hr />
+<h2 id="core-components">Core Components</h2>
+<h3 id="anim-data-scriptableobject">Anim Data (ScriptableObject)</h3>
+<p>The central asset containing your processed animation database.</p>
+<p><strong>Location:</strong> Created via <code>Create → MxM → Anim Data</code></p>
+<p><strong>Purpose:</strong>
+- Stores all processed pose data
+- Contains trajectory information
+- Holds skeleton configuration
+- Includes tag definitions
+- Reference by MxMAnimator at runtime</p>
+<p><strong>File Size:</strong> Can be 50MB-500MB+ depending on clip count and settings</p>
+<hr />
+<h3 id="mxmanimator-component">MxMAnimator (Component)</h3>
+<p>Runtime component that drives character animation.</p>
+<p><strong>Location:</strong> Add to character GameObject via <code>Add Component → MxM → MxMAnimator</code></p>
+<p><strong>Requirements:</strong>
+- Character must have <code>Animator</code> component
+- Anim Data asset must be assigned
+- Character must have rigged skeleton</p>
+<p><strong>Purpose:</strong>
+- Performs real-time pose searches
+- Manages animation blending
+- Controls playback
+- Interfaces with Animator for final pose application</p>
+<hr />
+<h3 id="mxmtrajectorygenerator-component">MxMTrajectoryGenerator (Component)</h3>
+<p>Converts player input into trajectory predictions.</p>
+<p><strong>Location:</strong> Add to character GameObject via <code>Add Component → MxM → MxMTrajectoryGenerator</code></p>
+<p><strong>Requirements:</strong>
+- Input Profile asset
+- Reference to MxMAnimator</p>
+<p><strong>Purpose:</strong>
+- Reads player/AI input
+- Calculates desired movement path
+- Provides trajectory to MxMAnimator for matching</p>
+<hr />
+<h2 id="anim-data-configuration">Anim Data Configuration</h2>
+<h3 id="creating-anim-data">Creating Anim Data</h3>
+<ol>
+<li><strong>Right-click</strong> in Project window</li>
+<li><strong>Create → MxM → Anim Data</strong></li>
+<li>Name descriptively (e.g., <code>PlayerLocomotion_AnimData</code>)</li>
+</ol>
+<h3 id="general-settings">General Settings</h3>
+<h4 id="pose-interval">Pose Interval</h4>
+<p><strong>Parameter:</strong> <code>Pose Interval</code><br />
+<strong>Type:</strong> Float (seconds)<br />
+<strong>Default:</strong> 0.1</p>
+<p><strong>Description:</strong> How frequently to sample poses from animation clips.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Poses (per second)</th>
+<th>Quality</th>
+<th>Performance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.05s</td>
+<td>20 poses</td>
+<td>Highest</td>
+<td>Slowest</td>
+</tr>
+<tr>
+<td>0.1s</td>
+<td>10 poses</td>
+<td>High</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>0.15s</td>
+<td>6.67 poses</td>
+<td>Medium</td>
+<td>Better</td>
+</tr>
+<tr>
+<td>0.2s</td>
+<td>5 poses</td>
+<td>Lower</td>
+<td>Best</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommendation:</strong> Start with 0.1s, adjust based on needs.</p>
+<h4 id="blending-mode">Blending Mode</h4>
+<p><strong>Parameter:</strong> <code>Blending Mode</code><br />
+<strong>Type:</strong> Enum<br />
+<strong>Options:</strong>
+- <code>Inertial Blending</code> - Smooth, natural transitions (default)
+- <code>Linear Blending</code> - Simpler, faster but less natural</p>
+<p><strong>Recommendation:</strong> Use Inertial Blending unless performance critical.</p>
+<h3 id="skeleton-configuration">Skeleton Configuration</h3>
+<p>Defines which bones are used for pose matching.</p>
+<p><strong>Steps to configure:</strong></p>
+<ol>
+<li>Click <strong>"Configure Skeleton"</strong> button</li>
+<li>Add joints from character's rig</li>
+<li>Set weights for each joint</li>
+</ol>
+<h4 id="joint-selection">Joint Selection</h4>
+<p><strong>Essential joints (minimum setup):</strong>
+- Hips (root)
+- Left Foot
+- Right Foot</p>
+<p><strong>Recommended joints (better quality):</strong>
+- Hips (root)
+- Left Foot / Right Foot
+- Left Hand / Right Hand
+- Spine or Chest
+- Head (optional)</p>
+<p><strong>Advanced joints (high fidelity):</strong>
+- All above + Knees, Elbows, Shoulders</p>
+<h4 id="joint-weights">Joint Weights</h4>
+<p><strong>Parameter:</strong> Per-joint weight multiplier<br />
+<strong>Range:</strong> 0.0 - 2.0<br />
+<strong>Default:</strong> 1.0</p>
+<p><strong>Purpose:</strong> Prioritize certain joints during matching.</p>
+<p><strong>Recommended weights:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Joint</th>
+<th>Weight</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feet</td>
+<td>1.0-1.5</td>
+<td>Critical for ground contact</td>
+</tr>
+<tr>
+<td>Hips</td>
+<td>0.8-1.0</td>
+<td>Important for overall pose</td>
+</tr>
+<tr>
+<td>Hands</td>
+<td>0.6-1.0</td>
+<td>Varies by importance</td>
+</tr>
+<tr>
+<td>Head</td>
+<td>0.3-0.6</td>
+<td>Less critical usually</td>
+</tr>
+<tr>
+<td>Spine</td>
+<td>0.5-0.8</td>
+<td>Moderate importance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="trajectory-configuration">Trajectory Configuration</h3>
+<p>Defines how far ahead the system predicts movement.</p>
+<p><strong>Parameters:</strong></p>
+<h4 id="trajectory-points">Trajectory Points</h4>
+<p>Add multiple prediction points at different time offsets.</p>
+<p><strong>Example configuration:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Time Offset</th>
+<th>Weight</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.2s</td>
+<td>1.0</td>
+<td>Near-term (critical)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.4s</td>
+<td>0.8</td>
+<td>Mid-term</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.6s</td>
+<td>0.6</td>
+<td>Long-term planning</td>
+</tr>
+</tbody>
+</table>
+<p><strong>More points = Better prediction but slower search</strong></p>
+<p><strong>Recommendation:</strong> 3-4 points for most characters.</p>
+<h3 id="composites">Composites</h3>
+<p>Composites are logical groups of animation clips.</p>
+<h4 id="creating-a-composite">Creating a Composite</h4>
+<ol>
+<li>In Anim Data, click <strong>"Add Composite"</strong></li>
+<li>Name it (e.g., "Locomotion", "Combat", "Idles")</li>
+<li>Select composite type</li>
+</ol>
+<h4 id="composite-types">Composite Types</h4>
+<p><strong>Standard Composite:</strong>
+- For continuous, repeating animations
+- Locomotion, idles, patrols
+- Can loop or transition freely</p>
+<p><strong>Event Composite:</strong>
+- For discrete actions
+- Attacks, jumps, interactions
+- Requires event configuration</p>
+<p><strong>Clip Composite:</strong>
+- For one-off animations
+- Cutscene clips
+- Special animations</p>
+<h4 id="adding-clips-to-composite">Adding Clips to Composite</h4>
+<ol>
+<li>Select composite</li>
+<li>Click <strong>"Add Clips"</strong></li>
+<li>Multi-select animation clips from project</li>
+<li>Click <strong>"Add"</strong></li>
+</ol>
+<h4 id="clip-settings">Clip Settings</h4>
+<p>Per-clip configuration:</p>
+<p><strong>Favor (Multiplier):</strong>
+- Increases likelihood of this clip being selected
+- Range: 0.1 - 2.0
+- Default: 1.0
+- Higher = More likely to be chosen</p>
+<p><strong>Pose Favor (Multiplier):</strong>
+- Per-pose favor (overrides clip favor)
+- Curve-based: favor different parts of clip differently</p>
+<p><strong>Tags:</strong>
+- Add metadata tags to clip
+- Used for runtime filtering
+- Click <strong>"+"</strong> to add tags
+- Example tags: "Run", "Walk", "Combat", "Idle"</p>
+<p><strong>Don't Use Tag:</strong>
+- Special tag that excludes clip from search
+- Used for event animations primarily</p>
+<h3 id="pre-processing">Pre-Processing</h3>
+<p>After configuration, you must pre-process to generate the database.</p>
+<h4 id="starting-pre-process">Starting Pre-Process</h4>
+<ol>
+<li>Scroll to bottom of Anim Data inspector</li>
+<li>Click <strong>"Pre-Process"</strong> button</li>
+<li>Wait for completion (progress bar shown)</li>
+</ol>
+<p><strong>Processing time:</strong> 5-45 minutes depending on:
+- Number of clips
+- Total clip duration
+- Pose interval (lower = slower)
+- Joint count
+- CPU performance</p>
+<h4 id="verification">Verification</h4>
+<p>After processing:</p>
+<p><strong>Green clips:</strong> Successfully processed ✓<br />
+<strong>Red clips:</strong> Errors - check console ✗</p>
+<p><strong>Check pose count:</strong> Should show reasonable total (e.g., 5000-50000 poses)</p>
+<hr />
+<h2 id="runtime-components">Runtime Components</h2>
+<h3 id="mxmanimator-component_1">MxMAnimator Component</h3>
+<h4 id="inspector-parameters">Inspector Parameters</h4>
+<h5 id="references">References</h5>
+<p><strong>Anim Data:</strong>
+- Drag processed Anim Data asset here
+- Required for runtime</p>
+<p><strong>Animator:</strong>
+- Reference to character's Animator component
+- Usually auto-assigned</p>
+<p><strong>Transform:</strong>
+- Root transform of character
+- Usually auto-assigned</p>
+<h5 id="update-settings">Update Settings</h5>
+<p><strong>Update Mode:</strong>
+- <code>Normal</code> - Updates in Update()
+- <code>AnimatePhysics</code> - Updates in FixedUpdate()
+- <code>UnscaledTime</code> - Ignores Time.timeScale</p>
+<p><strong>Recommendation:</strong> Use <code>Normal</code> for most characters, <code>AnimatePhysics</code> if using physics.</p>
+<h5 id="blending">Blending</h5>
+<p><strong>Blend Time:</strong>
+- Duration of transitions between clips
+- Range: 0.0 - 1.0 seconds
+- Default: 0.3s</p>
+<p><strong>Effects:</strong>
+- Lower (0.1-0.2s): Snappier, may jitter
+- Higher (0.4-0.6s): Smoother, may feel sluggish</p>
+<p><strong>Playback Speed:</strong>
+- Global animation speed multiplier
+- Range: 0.1 - 2.0
+- Default: 1.0
+- Does NOT affect trajectory matching</p>
+<h5 id="search-settings">Search Settings</h5>
+<p><strong>Search Frequency:</strong>
+- How often to search for new match
+- Options:
+  - <code>Every Frame</code> - Best quality
+  - <code>Every 2 Frames</code> - Good balance
+  - <code>Every 3 Frames</code> - Performance mode</p>
+<p><strong>Pose Quality:</strong>
+- Trade-off between quality and performance
+- <code>Highest</code>, <code>High</code>, <code>Medium</code>, <code>Low</code></p>
+<h5 id="debug-settings">Debug Settings</h5>
+<p><strong>Show Debug Info:</strong>
+- Displays runtime information in Scene view
+- Trajectory visualization
+- Current pose info
+- Search statistics</p>
+<p><strong>Debug Color:</strong>
+- Color for debug visualization</p>
+<h4 id="runtime-api">Runtime API</h4>
+<p>Common MxMAnimator methods:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Get the component</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">MxMAnimator</span><span class="w"> </span><span class="n">mxmAnim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">MxMAnimator</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// Tag control</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">mxmAnim</span><span class="p">.</span><span class="n">EnableTag</span><span class="p">(</span><span class="s">&quot;Combat&quot;</span><span class="p">);</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">mxmAnim</span><span class="p">.</span><span class="n">DisableTag</span><span class="p">(</span><span class="s">&quot;Run&quot;</span><span class="p">);</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">mxmAnim</span><span class="p">.</span><span class="n">SetRequiredTag</span><span class="p">(</span><span class="s">&quot;Crouch&quot;</span><span class="p">);</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">mxmAnim</span><span class="p">.</span><span class="n">ClearRequiredTags</span><span class="p">();</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">// Events</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">mxmAnim</span><span class="p">.</span><span class="n">BeginEvent</span><span class="p">(</span><span class="n">eventDefinition</span><span class="p">);</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">mxmAnim</span><span class="p">.</span><span class="n">StopCurrentEvent</span><span class="p">();</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1">// State queries</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="kt">bool</span><span class="w"> </span><span class="n">isInEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mxmAnim</span><span class="p">.</span><span class="n">IsEventActive</span><span class="p">;</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="kt">int</span><span class="w"> </span><span class="n">currentPoseId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mxmAnim</span><span class="p">.</span><span class="n">CurrentPoseId</span><span class="p">;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="kt">float</span><span class="w"> </span><span class="n">currentClipTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mxmAnim</span><span class="p">.</span><span class="n">CurrentClipTime</span><span class="p">;</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="c1">// Control</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">mxmAnim</span><span class="p">.</span><span class="n">Pause</span><span class="p">();</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="n">mxmAnim</span><span class="p">.</span><span class="n">Resume</span><span class="p">();</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="n">mxmAnim</span><span class="p">.</span><span class="n">SetPlaybackSpeed</span><span class="p">(</span><span class="mf">1.5f</span><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<h3 id="mxmtrajectorygenerator-component_1">MxMTrajectoryGenerator Component</h3>
+<h4 id="inspector-parameters_1">Inspector Parameters</h4>
+<h5 id="references_1">References</h5>
+<p><strong>Input Profile:</strong>
+- Drag Input Profile asset here
+- Defines input source and configuration</p>
+<p><strong>MxM Animator:</strong>
+- Reference to character's MxMAnimator
+- Usually auto-assigned</p>
+<h5 id="trajectory-settings">Trajectory Settings</h5>
+<p><strong>Max Speed:</strong>
+- Maximum movement speed (m/s)
+- Should match your fastest animation speed
+- Default: 5.0</p>
+<p><strong>Acceleration:</strong>
+- How quickly speed ramps up
+- Higher = more responsive
+- Default: 10.0</p>
+<p><strong>Responsiveness:</strong>
+- How quickly trajectory adjusts to input changes
+- Range: 0.0 - 1.0
+- Lower = smoother path, higher = snappier response
+- Default: 0.8</p>
+<p><strong>Strafe Enabled:</strong>
+- Allow movement in any direction without rotation
+- True = character faces forward while strafing
+- False = character rotates to face movement direction</p>
+<h4 id="debug-visualization">Debug Visualization</h4>
+<p><strong>Show Trajectory:</strong>
+- Visualizes predicted path in Scene view
+- Useful for debugging input/movement</p>
+<p><strong>Trajectory Color:</strong>
+- Color for trajectory line</p>
+<hr />
+<h2 id="input-and-trajectory">Input and Trajectory</h2>
+<h3 id="input-profiles">Input Profiles</h3>
+<p>Input Profiles define how input is read and processed.</p>
+<h4 id="creating-input-profile">Creating Input Profile</h4>
+<ol>
+<li><strong>Right-click</strong> in Project window</li>
+<li><strong>Create → MxM → Input Profile</strong></li>
+<li>Name it (e.g., <code>PlayerInput</code>)</li>
+</ol>
+<h4 id="input-types">Input Types</h4>
+<p><strong>Unity Input System (New):</strong>
+- Requires Input System package
+- Most flexible and modern
+- Supports rebinding</p>
+<p><strong>Legacy Input Manager:</strong>
+- Uses classic Input.GetAxis()
+- Simple setup
+- Works out of the box</p>
+<p><strong>Custom:</strong>
+- Scriptable input
+- Full control via code
+- Advanced users only</p>
+<h4 id="configuration-legacy-input-example">Configuration (Legacy Input Example)</h4>
+<p><strong>Horizontal Axis:</strong>
+- Input axis name for left/right
+- Default: <code>"Horizontal"</code>
+- Maps to A/D or Left/Right arrows</p>
+<p><strong>Vertical Axis:</strong>
+- Input axis name for forward/back
+- Default: <code>"Vertical"</code>
+- Maps to W/S or Up/Down arrows</p>
+<p><strong>Sprint Button:</strong>
+- Button name for sprint
+- Default: <code>"Fire3"</code> (Left Shift)</p>
+<p><strong>Crouch Button:</strong>
+- Button name for crouch
+- Default: <code>"Fire1"</code> (Left Ctrl)</p>
+<h3 id="trajectory-calculation">Trajectory Calculation</h3>
+<p>The trajectory generator creates a predicted movement path.</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Read input (WASD, joystick, etc.)</li>
+<li>Apply acceleration and max speed</li>
+<li>Calculate future positions at trajectory points</li>
+<li>Smooth path based on responsiveness</li>
+<li>Apply character rotation (if not strafing)</li>
+<li>Send to MxMAnimator for matching</li>
+</ol>
+<p><strong>Result:</strong> Array of future positions and facing directions that MxM uses to find best matching animation.</p>
+<hr />
+<h2 id="event-system">Event System</h2>
+<p>Events allow discrete actions like attacks, jumps, or interactions.</p>
+<h3 id="event-workflow">Event Workflow</h3>
+<ol>
+<li>Create event animations (wind-up, action, recovery)</li>
+<li>Add to Event Composite in Anim Data</li>
+<li>Tag as "Do Not Use" (prevents locomotion matching)</li>
+<li>Configure event timeline (phases)</li>
+<li>Create Event Definition asset</li>
+<li>Trigger via code: <code>mxmAnimator.BeginEvent(definition)</code></li>
+</ol>
+<h3 id="event-phases">Event Phases</h3>
+<p>Every event animation has 4 phases:</p>
+<p><strong>Wind-Up (Blend In):</strong>
+- System blends from current pose into event
+- Can start from any locomotion pose
+- Duration: Set via timeline markers</p>
+<p><strong>Action (Mandatory):</strong>
+- Core action that must play to completion
+- Cannot be interrupted
+- Contains the "hit" or critical action</p>
+<p><strong>Follow-Through (Buffer):</strong>
+- Energy dissipation, recovery beginning
+- Still mandatory
+- Transition buffer</p>
+<p><strong>Recovery (Can Exit):</strong>
+- Return to locomotion-ready pose
+- Can be interrupted early
+- Allows early exit to responsiveness</p>
+<h3 id="event-definition-asset">Event Definition Asset</h3>
+<h4 id="creating-event-definition">Creating Event Definition</h4>
+<ol>
+<li><strong>Right-click</strong> in Project window</li>
+<li><strong>Create → MxM → Event Definition</strong></li>
+<li>Name it (e.g., <code>Attack_Heavy</code>)</li>
+</ol>
+<h4 id="parameters">Parameters</h4>
+<p><strong>Priority:</strong>
+- Can this event interrupt others?
+- Higher priority = Can interrupt lower</p>
+<p><strong>Exit with Motion:</strong>
+- What to do after event completes
+- Options: <code>Idle</code>, <code>Walk</code>, <code>Run</code>, <code>Match Trajectory</code></p>
+<p><strong>Contact Warping:</strong>
+- Use motion warping for precision
+- Target point (e.g., ledge, button)
+- Scales root motion to hit exact position</p>
+<p><strong>Blend In Time:</strong>
+- Override blend time for this event
+- Useful for instant actions vs slow wind-ups</p>
+<p><strong>Trajectory Offset:</strong>
+- Adjust character position/rotation during event
+- Advanced feature</p>
+<h3 id="triggering-events">Triggering Events</h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Simple trigger</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">BeginEvent</span><span class="p">(</span><span class="n">attackDefinition</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">// Check if event is active</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">IsEventActive</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">{</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="c1">// Can&#39;t trigger new event</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">// Stop current event</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">StopCurrentEvent</span><span class="p">();</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1">// Event callbacks</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">OnEventStart</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">HandleEventStart</span><span class="p">;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">OnEventEnd</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">HandleEventEnd</span><span class="p">;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">OnEventContact</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">HandleEventContact</span><span class="p">;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="advanced-features">Advanced Features</h2>
+<h3 id="tag-system">Tag System</h3>
+<p>Tags are metadata labels for filtering animations at runtime.</p>
+<h4 id="assigning-tags-editor">Assigning Tags (Editor)</h4>
+<p>In Anim Data, for each clip:
+- Click <strong>"+ Add Tag"</strong>
+- Enter tag name (e.g., "Combat", "Run", "Weapon")
+- Can add multiple tags per clip</p>
+<h4 id="using-tags-runtime">Using Tags (Runtime)</h4>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Enable specific tagged clips</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">EnableTag</span><span class="p">(</span><span class="s">&quot;Combat&quot;</span><span class="p">);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">// Now only clips tagged &quot;Combat&quot; can be matched</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">// Disable tags</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">DisableTag</span><span class="p">(</span><span class="s">&quot;Run&quot;</span><span class="p">);</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1">// &quot;Run&quot; tagged clips excluded from matching</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1">// Require tag (all clips MUST have this tag)</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">SetRequiredTag</span><span class="p">(</span><span class="s">&quot;Crouch&quot;</span><span class="p">);</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">// Only &quot;Crouch&quot; clips available</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1">// Clear all tag requirements</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">ClearRequiredTags</span><span class="p">();</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1">// Multiple tags</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">EnableTag</span><span class="p">(</span><span class="s">&quot;Combat&quot;</span><span class="p">);</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">EnableTag</span><span class="p">(</span><span class="s">&quot;Weapon&quot;</span><span class="p">);</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="c1">// Clips need ANY enabled tag (OR logic)</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">SetRequiredTag</span><span class="p">(</span><span class="s">&quot;Combat&quot;</span><span class="p">);</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">SetRequiredTag</span><span class="p">(</span><span class="s">&quot;Weapon&quot;</span><span class="p">);</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="c1">// Clips need ALL required tags (AND logic)</span>
+</span></code></pre></div>
+<h4 id="tag-strategies">Tag Strategies</h4>
+<p><strong>By Movement Type:</strong>
+- <code>"Idle"</code>, <code>"Walk"</code>, <code>"Run"</code>, <code>"Sprint"</code></p>
+<p><strong>By Context:</strong>
+- <code>"Combat"</code>, <code>"Exploration"</code>, <code>"Stealth"</code></p>
+<p><strong>By Equipment:</strong>
+- <code>"Unarmed"</code>, <code>"OneHanded"</code>, <code>"TwoHanded"</code></p>
+<p><strong>By Terrain:</strong>
+- <code>"Flat"</code>, <code>"Stairs"</code>, <code>"Slopes"</code></p>
+<h3 id="layer-system">Layer System</h3>
+<p>NOT to be confused with Unity's Animation Layers.</p>
+<p><strong>MxM Layers</strong> allow multiple MxMAnimators to control different body parts:</p>
+<p><strong>Example:</strong>
+- Layer 0 (Full Body): MxMAnimator for locomotion
+- Layer 1 (Upper Body): MxMAnimator for aiming/shooting</p>
+<p><strong>Setup:</strong>
+1. Add multiple MxMAnimator components
+2. Set different layer masks on Animator
+3. Each MxMAnimator uses different Anim Data
+4. Blend between layers as needed</p>
+<p><strong>Use case:</strong> Shoot while moving, gesture while walking.</p>
+<h3 id="calibration-sets">Calibration Sets</h3>
+<p>Advanced feature for blending between different animation sets.</p>
+<p><strong>Example:</strong>
+- Default locomotion
+- Carrying heavy object locomotion
+- Injured/limping locomotion</p>
+<p><strong>Setup:</strong>
+1. Create multiple Anim Data assets
+2. Use same skeleton configuration
+3. Swap at runtime or blend between them</p>
+<hr />
+<h2 id="scripting-api">Scripting API</h2>
+<h3 id="common-use-cases">Common Use Cases</h3>
+<h4 id="basic-control">Basic Control</h4>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">MxM</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CharacterController</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">{</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">MxMAnimator</span><span class="w"> </span><span class="n">mxmAnimator</span><span class="p">;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="n">mxmAnimator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">MxMAnimator</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">EnterCombat</span><span class="p">()</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">        </span><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">EnableTag</span><span class="p">(</span><span class="s">&quot;Combat&quot;</span><span class="p">);</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">ExitCombat</span><span class="p">()</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">        </span><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">DisableTag</span><span class="p">(</span><span class="s">&quot;Combat&quot;</span><span class="p">);</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Attack</span><span class="p">()</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">IsEventActive</span><span class="p">)</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">            </span><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">BeginEvent</span><span class="p">(</span><span class="n">attackEvent</span><span class="p">);</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="responding-to-events">Responding to Events</h4>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">void</span><span class="w"> </span><span class="nf">OnEnable</span><span class="p">()</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">OnEventStart</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">HandleEventStart</span><span class="p">;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">OnEventContact</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">HandleEventContact</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">OnEventEnd</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">HandleEventEnd</span><span class="p">;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">void</span><span class="w"> </span><span class="nf">OnDisable</span><span class="p">()</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">{</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">OnEventStart</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">HandleEventStart</span><span class="p">;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">OnEventContact</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">HandleEventContact</span><span class="p">;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">OnEventEnd</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">HandleEventEnd</span><span class="p">;</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p">}</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="k">void</span><span class="w"> </span><span class="nf">HandleEventStart</span><span class="p">(</span><span class="n">EventDefinition</span><span class="w"> </span><span class="n">evt</span><span class="p">)</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">{</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&quot;Event started: {evt.name}&quot;</span><span class="p">);</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="c1">// Play sound effect, particle effect, etc.</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="p">}</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="k">void</span><span class="w"> </span><span class="nf">HandleEventContact</span><span class="p">(</span><span class="n">EventDefinition</span><span class="w"> </span><span class="n">evt</span><span class="p">)</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="p">{</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="c1">// Contact point hit (for motion warping)</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">    </span><span class="c1">// Deal damage, spawn effects, etc.</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="p">}</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="k">void</span><span class="w"> </span><span class="nf">HandleEventEnd</span><span class="p">(</span><span class="n">EventDefinition</span><span class="w"> </span><span class="n">evt</span><span class="p">)</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="p">{</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">    </span><span class="c1">// Event completed</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">    </span><span class="c1">// Re-enable controls, etc.</span>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="custom-trajectory">Custom Trajectory</h4>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CustomTrajectory</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">MxMTrajectoryGenerator</span><span class="w"> </span><span class="n">trajGen</span><span class="p">;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="n">trajGen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">MxMTrajectoryGenerator</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">SetDesiredVelocity</span><span class="p">(</span><span class="n">Vector3</span><span class="w"> </span><span class="n">velocity</span><span class="p">)</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">        </span><span class="n">trajGen</span><span class="p">.</span><span class="n">SetDesiredVelocity</span><span class="p">(</span><span class="n">velocity</span><span class="p">);</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">SetDesiredRotation</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="p">)</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">        </span><span class="n">trajGen</span><span class="p">.</span><span class="n">SetDesiredRotation</span><span class="p">(</span><span class="n">angle</span><span class="p">);</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h2 id="performance-optimization">Performance Optimization</h2>
+<h3 id="pre-processing-optimizations">Pre-Processing Optimizations</h3>
+<p><strong>Reduce Pose Count:</strong>
+- Increase Pose Interval (0.1s → 0.15s)
+- Fewer clips
+- Shorter clips</p>
+<p><strong>Reduce Complexity:</strong>
+- Fewer skeleton joints
+- Fewer trajectory points
+- Simpler composites</p>
+<h3 id="runtime-optimizations">Runtime Optimizations</h3>
+<p><strong>Search Frequency:</strong>
+- Change from <code>Every Frame</code> to <code>Every 2-3 Frames</code>
+- Still smooth, significantly faster</p>
+<p><strong>Quality Settings:</strong>
+- Lower Pose Quality setting
+- Acceptable quality loss for performance gain</p>
+<p><strong>LOD System:</strong>
+- Disable MxM for distant characters
+- Use simpler animation for background NPCs
+- Distance-based quality scaling</p>
+<h3 id="memory-optimizations">Memory Optimizations</h3>
+<p><strong>Anim Data Size:</strong>
+- Each Anim Data can be 100s of MB
+- Share Anim Data between similar characters
+- Use multiple smaller Anim Data for variety</p>
+<p><strong>Unload Unused:</strong>
+- Unload Anim Data when not needed
+- Use Addressables for large animation sets
+- Stream animations for large open worlds</p>
+<h3 id="profiling">Profiling</h3>
+<p><strong>Unity Profiler Integration:</strong></p>
+<p>Check these markers:
+- <code>MxMAnimator.Update</code> - Total update time
+- <code>PoseSearch Job</code> - Burst-compiled search
+- <code>Blending</code> - Blend calculation time</p>
+<p><strong>Target Performance:</strong>
+- Desktop: &lt; 2ms per character
+- Console: &lt; 1.5ms per character
+- Mobile: &lt; 5ms per character</p>
+<hr />
+<h2 id="integration-patterns">Integration Patterns</h2>
+<h3 id="with-character-controllers">With Character Controllers</h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CharacterMovement</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">MxMAnimator</span><span class="w"> </span><span class="n">mxmAnimator</span><span class="p">;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">CharacterController</span><span class="w"> </span><span class="n">controller</span><span class="p">;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span><span class="n">mxmAnimator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">MxMAnimator</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="n">controller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">CharacterController</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">        </span><span class="c1">// Subscribe to movement delta</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">        </span><span class="n">mxmAnimator</span><span class="p">.</span><span class="n">OnUpdateMove</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">HandleMovement</span><span class="p">;</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">HandleMovement</span><span class="p">(</span><span class="n">Vector3</span><span class="w"> </span><span class="n">delta</span><span class="p">,</span><span class="w"> </span><span class="n">Quaternion</span><span class="w"> </span><span class="n">rotation</span><span class="p">)</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">        </span><span class="c1">// Apply movement from animation</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">        </span><span class="n">controller</span><span class="p">.</span><span class="n">Move</span><span class="p">(</span><span class="n">delta</span><span class="p">);</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">        </span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rotation</span><span class="p">;</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="with-ai">With AI</h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">AIController</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">{</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">MxMTrajectoryGenerator</span><span class="w"> </span><span class="n">trajGen</span><span class="p">;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">NavMeshAgent</span><span class="w"> </span><span class="n">agent</span><span class="p">;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">        </span><span class="n">trajGen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">MxMTrajectoryGenerator</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">        </span><span class="n">agent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">NavMeshAgent</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">        </span><span class="c1">// Disable agent&#39;s rotation (MxM handles it)</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">        </span><span class="n">agent</span><span class="p">.</span><span class="n">updateRotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Update</span><span class="p">()</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">        </span><span class="c1">// Feed NavMesh desired velocity to trajectory</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">        </span><span class="n">Vector3</span><span class="w"> </span><span class="n">desiredVelocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">agent</span><span class="p">.</span><span class="n">desiredVelocity</span><span class="p">;</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">        </span><span class="n">trajGen</span><span class="p">.</span><span class="n">SetDesiredVelocity</span><span class="p">(</span><span class="n">desiredVelocity</span><span class="p">);</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="with-ik">With IK</h3>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">FootIK</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">MxMAnimator</span><span class="w"> </span><span class="n">mxmAnimator</span><span class="p">;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">Animator</span><span class="w"> </span><span class="n">animator</span><span class="p">;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="n">mxmAnimator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">MxMAnimator</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="n">animator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">Animator</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAnimatorIK</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">layerIndex</span><span class="p">)</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">layerIndex</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">            </span><span class="c1">// MxM updates pose first</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">            </span><span class="c1">// Now apply IK corrections</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">            </span><span class="n">ApplyFootIK</span><span class="p">(</span><span class="n">AvatarIKGoal</span><span class="p">.</span><span class="n">LeftFoot</span><span class="p">);</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">            </span><span class="n">ApplyFootIK</span><span class="p">(</span><span class="n">AvatarIKGoal</span><span class="p">.</span><span class="n">RightFoot</span><span class="p">);</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">ApplyFootIK</span><span class="p">(</span><span class="n">AvatarIKGoal</span><span class="w"> </span><span class="n">foot</span><span class="p">)</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="w">        </span><span class="c1">// Raycast to ground</span>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="w">        </span><span class="c1">// Set IK position/rotation</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="w">        </span><span class="c1">// Adjust for terrain</span>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h2 id="summary">Summary</h2>
+<p>This manual covers the complete MxM system. For specific workflows:</p>
+<ul>
+<li><strong>Setup:</strong> See <a href="../getting-started/">Getting Started</a></li>
+<li><strong>Quick implementation:</strong> See <a href="../quick-start/">Quick Start</a></li>
+<li><strong>Animation creation:</strong> See <a href="../animation-guide/">Animation Guide</a></li>
+<li><strong>Troubleshooting:</strong> See <a href="../faq/">FAQ</a></li>
+<li><strong>Theory and architecture:</strong> See <a href="../technical-reference/">Technical Reference</a></li>
+</ul>
+<hr />
+<h2 id="quick-reference-tables">Quick Reference Tables</h2>
+<h3 id="component-checklist">Component Checklist</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Required</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Animator</td>
+<td>Yes</td>
+<td>Applies final pose</td>
+</tr>
+<tr>
+<td>MxMAnimator</td>
+<td>Yes</td>
+<td>Motion matching brain</td>
+</tr>
+<tr>
+<td>MxMTrajectoryGenerator</td>
+<td>Yes</td>
+<td>Input → trajectory</td>
+</tr>
+<tr>
+<td>Character Controller</td>
+<td>Recommended</td>
+<td>Movement</td>
+</tr>
+<tr>
+<td>Anim Data Asset</td>
+<td>Yes</td>
+<td>Animation database</td>
+</tr>
+<tr>
+<td>Input Profile Asset</td>
+<td>Yes</td>
+<td>Input configuration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommended-settings-by-platform">Recommended Settings by Platform</h3>
+<h4 id="desktopconsole">Desktop/Console</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Pose Interval: 0.08 - 0.1s
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Search Frequency: Every Frame
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Joints: 8-12
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Trajectory Points: 4-5
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Pose Quality: Highest
+</span></code></pre></div>
+<h4 id="mobile-high-end">Mobile (High-End)</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Pose Interval: 0.12 - 0.15s
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Search Frequency: Every 2 Frames
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Joints: 6-8
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Trajectory Points: 3
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>Pose Quality: High
+</span></code></pre></div>
+<h4 id="mobile-low-end">Mobile (Low-End)</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Pose Interval: 0.15 - 0.2s
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Search Frequency: Every 3 Frames
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Joints: 4-6
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>Trajectory Points: 2-3
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>Pose Quality: Medium
+</span></code></pre></div>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">Need More Help?</p>
+<ul>
+<li><a href="../technical-reference/">Technical Reference</a> for deep understanding</li>
+<li><a href="../faq/">FAQ</a> for common questions</li>
+<li><a href="https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity/discussions">GitHub Discussions</a> for community support</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../quick-start/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quick Start Tutorial">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Quick Start Tutorial
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../technical-reference/" class="md-footer__link md-footer__link--next" aria-label="Next: Technical Reference">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Technical Reference
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Originally created by MxM Animation System | Community maintained by Frost Blade Studios
+
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity" target="_blank" rel="noopener" title="GitHub Repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

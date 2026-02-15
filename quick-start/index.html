@@ -1,0 +1,2590 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Motion Matching for Unity - Community maintained fork with Unity 2022+ support">
+      
+      
+      
+        <link rel="canonical" href="https://frost-blade-studios.github.io/Motion-Matching-for-Unity/quick-start/">
+      
+      
+        <link rel="prev" href="../getting-started/">
+      
+      
+        <link rel="next" href="../user-manual/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Quick Start Tutorial - MxM for Unity (Community Fork)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quick-start-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MxM for Unity (Community Fork)" class="md-header__button md-logo" aria-label="MxM for Unity (Community Fork)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MxM for Unity (Community Fork)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quick Start Tutorial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Frost-Blade-Studios/MxM
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../getting-started/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../user-manual/" class="md-tabs__link">
+          
+  
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../resources/" class="md-tabs__link">
+          
+  
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MxM for Unity (Community Fork)" class="md-nav__button md-logo" aria-label="MxM for Unity (Community Fork)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MxM for Unity (Community Fork)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Frost-Blade-Studios/MxM
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start Tutorial
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-prepare-your-animation-clips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Prepare Your Animation Clips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Prepare Your Animation Clips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You Need
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-the-mxm-anim-data-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Create the MxM Anim Data Asset
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Create the MxM Anim Data Asset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the Asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-basic-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Basic Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Basic Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skeleton-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skeleton Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trajectory Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-add-animation-clips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Add Animation Clips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Add Animation Clips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-composite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a Composite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-clips-to-composite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add Clips to Composite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-clips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Clips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-pre-process-the-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Pre-Process the Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Pre-Process the Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-happening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's Happening
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-success" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify Success
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-set-up-your-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Set Up Your Character
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Set Up Your Character">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-the-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add the Character
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-mxmanimator-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add MxMAnimator Component
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-mxmanimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure MxMAnimator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure MxMAnimator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-set-up-input-and-trajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Set Up Input and Trajectory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6: Set Up Input and Trajectory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-trajectory-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add Trajectory Generator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-input-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create Input Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-input-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Input Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-input-to-trajectory-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Link Input to Trajectory Generator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-test-your-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Test Your Character
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 7: Test Your Character">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enter-play-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enter Play Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-expect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Expect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting Common Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#character-doesnt-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Character Doesn't Move
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animations-look-jerky" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Animations Look Jerky
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character-slidesdoesnt-follow-trajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Character Slides/Doesn't Follow Trajectory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poor-performance-low-fps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poor Performance / Low FPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expand-your-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expand Your Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learn More
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Tips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-desktopconsole-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Desktop/Console Games
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-mobile-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Mobile Games
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-vr-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For VR Games
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../technical-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animation Authoring Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Original PDFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-prepare-your-animation-clips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Prepare Your Animation Clips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Prepare Your Animation Clips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You Need
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-the-mxm-anim-data-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Create the MxM Anim Data Asset
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Create the MxM Anim Data Asset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the Asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-basic-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Basic Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Basic Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skeleton-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skeleton Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trajectory-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trajectory Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-add-animation-clips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Add Animation Clips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Add Animation Clips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-composite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a Composite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-clips-to-composite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add Clips to Composite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-clips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Clips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-pre-process-the-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Pre-Process the Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Pre-Process the Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-happening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's Happening
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-success" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify Success
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-set-up-your-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Set Up Your Character
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Set Up Your Character">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-the-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add the Character
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-mxmanimator-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add MxMAnimator Component
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-mxmanimator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure MxMAnimator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure MxMAnimator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-set-up-input-and-trajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Set Up Input and Trajectory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6: Set Up Input and Trajectory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-trajectory-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add Trajectory Generator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-input-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create Input Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-input-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Input Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-input-to-trajectory-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Link Input to Trajectory Generator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-test-your-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Test Your Character
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 7: Test Your Character">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enter-play-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enter Play Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-expect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Expect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting Common Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#character-doesnt-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Character Doesn't Move
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animations-look-jerky" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Animations Look Jerky
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character-slidesdoesnt-follow-trajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Character Slides/Doesn't Follow Trajectory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poor-performance-low-fps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poor Performance / Low FPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expand-your-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expand Your Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learn More
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Tips
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-desktopconsole-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Desktop/Console Games
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-mobile-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Mobile Games
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-vr-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For VR Games
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity/edit/main/docs/quick-start.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="quick-start-guide">Quick Start Guide</h1>
+<p>Get your first Motion Matching character up and running in 30 minutes.</p>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before starting, ensure you have:</p>
+<ul>
+<li><strong>Unity 2020.3 LTS or newer</strong> (2022.3 LTS recommended)</li>
+<li><strong>MxM installed</strong> - See <a href="../getting-started/#installation">Installation Guide</a></li>
+<li><strong>Humanoid or Generic rigged character</strong> with animation clips</li>
+<li><strong>10-20 animation clips minimum</strong> (locomotion recommended for first test)</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">First Time with Motion Matching?</p>
+<p>Motion Matching works differently than traditional animators. Instead of setting up state machines and transitions, you'll be creating an animation <strong>database</strong> that the system searches in real-time.</p>
+</div>
+<hr />
+<h2 id="step-1-prepare-your-animation-clips">Step 1: Prepare Your Animation Clips</h2>
+<h3 id="what-you-need">What You Need</h3>
+<p>For a basic locomotion setup, gather these animation types:</p>
+<table>
+<thead>
+<tr>
+<th>Animation Type</th>
+<th>Quantity</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Idle</strong></td>
+<td>1-2 clips</td>
+<td>Standing idle, breathing</td>
+</tr>
+<tr>
+<td><strong>Walk</strong></td>
+<td>2-4 clips</td>
+<td>Walk forward, walk strafe left/right</td>
+</tr>
+<tr>
+<td><strong>Run</strong></td>
+<td>2-4 clips</td>
+<td>Run forward, run strafe left/right</td>
+</tr>
+<tr>
+<td><strong>Turns</strong></td>
+<td>2-4 clips (optional)</td>
+<td>Turn 90°, turn 180°</td>
+</tr>
+<tr>
+<td><strong>Starts/Stops</strong></td>
+<td>2-4 clips (optional)</td>
+<td>Start from idle, stop to idle</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Animation Requirements</p>
+<ul>
+<li>All clips must use the <strong>same rig/skeleton</strong></li>
+<li>Clips should have <strong>consistent FPS</strong> (30 or 60 recommended)</li>
+<li><strong>Root motion</strong> should be baked into the animations</li>
+<li>Motion capture data produces the best results</li>
+</ul>
+</div>
+<h3 id="import-settings">Import Settings</h3>
+<p>For each animation clip:</p>
+<ol>
+<li>Select the animation file in Unity</li>
+<li>In the Inspector, set:</li>
+<li><strong>Rig</strong>: Humanoid (or Generic if appropriate)</li>
+<li><strong>Root Transform Rotation</strong>: Bake Into Pose</li>
+<li><strong>Root Transform Position (Y)</strong>: Bake Into Pose</li>
+<li><strong>Root Transform Position (XZ)</strong>: Based Upon → Original</li>
+<li>Click <strong>Apply</strong></li>
+</ol>
+<hr />
+<h2 id="step-2-create-the-mxm-anim-data-asset">Step 2: Create the MxM Anim Data Asset</h2>
+<p>The <strong>Anim Data</strong> asset is the heart of MxM - it's your pre-processed animation database.</p>
+<h3 id="create-the-asset">Create the Asset</h3>
+<ol>
+<li><strong>Right-click</strong> in your Project window</li>
+<li><strong>Create → MxM → Anim Data</strong></li>
+<li>Name it descriptively (e.g., <code>PlayerLocomotion_AnimData</code>)</li>
+</ol>
+<h3 id="configure-basic-settings">Configure Basic Settings</h3>
+<p>Select your new Anim Data asset and configure:</p>
+<h4 id="general-settings">General Settings</h4>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pose Interval</strong></td>
+<td>0.1 seconds</td>
+<td>Lower = more poses = smoother but slower</td>
+</tr>
+<tr>
+<td><strong>Blending Mode</strong></td>
+<td>Inertial Blending</td>
+<td>Standard for most characters</td>
+</tr>
+</tbody>
+</table>
+<h4 id="skeleton-configuration">Skeleton Configuration</h4>
+<ol>
+<li>Click <strong>"Configure Skeleton"</strong></li>
+<li>Select key joints for matching:</li>
+</ol>
+<p><strong>Minimum Setup:</strong>
+- Hips (root)
+- Left Foot
+- Right Foot</p>
+<p><strong>Recommended Setup (better quality):</strong>
+- Hips (root)
+- Left Foot / Right Foot
+- Left Hand / Right Hand
+- Head (optional)</p>
+<ol>
+<li>Set <strong>Joint Weights</strong>:</li>
+<li>Feet: <strong>1.0</strong> (critical for foot placement)</li>
+<li>Hands: <strong>0.7</strong> (important for upper body)</li>
+<li>Hips: <strong>0.8</strong> (critical for root motion)</li>
+<li>Head: <strong>0.5</strong> (less critical)</li>
+</ol>
+<h4 id="trajectory-configuration">Trajectory Configuration</h4>
+<p>Configure how far the system looks ahead:</p>
+<table>
+<thead>
+<tr>
+<th>Trajectory Point</th>
+<th>Time Offset</th>
+<th>Recommended Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Point 1</strong></td>
+<td>0.2s ahead</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><strong>Point 2</strong></td>
+<td>0.4s ahead</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td><strong>Point 3</strong></td>
+<td>0.6s ahead</td>
+<td>0.6</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Trajectory Points</p>
+<p>More trajectory points = better prediction but slower search. 3 points is a good starting balance.</p>
+</div>
+<hr />
+<h2 id="step-3-add-animation-clips">Step 3: Add Animation Clips</h2>
+<p>Now add your animation clips to the database:</p>
+<h3 id="create-a-composite">Create a Composite</h3>
+<p><strong>Composites</strong> group related animations together.</p>
+<ol>
+<li>In your Anim Data asset, click <strong>"Add Composite"</strong></li>
+<li>Name it (e.g., "Locomotion")</li>
+<li>Set <strong>Type</strong>: Standard Composite</li>
+</ol>
+<h3 id="add-clips-to-composite">Add Clips to Composite</h3>
+<ol>
+<li>Click <strong>"Add Clips"</strong> in the composite section</li>
+<li>Select all your locomotion animation clips</li>
+<li>Click <strong>"Add"</strong></li>
+</ol>
+<h3 id="configure-clips">Configure Clips</h3>
+<p>For each clip in the list:</p>
+<ol>
+<li><strong>Review settings</strong> - Most defaults are fine</li>
+<li><strong>Tag clips</strong> (optional but recommended):</li>
+<li>Add tag <code>"Walk"</code> to walk clips</li>
+<li>Add tag <code>"Run"</code> to run clips</li>
+<li>Add tag <code>"Idle"</code> to idle clips</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Tags are powerful</p>
+<p>Tags let you control which animations are available at runtime. For example, you can disable "Run" animations when the character is crouching.</p>
+</div>
+<hr />
+<h2 id="step-4-pre-process-the-database">Step 4: Pre-Process the Database</h2>
+<p>This is where MxM analyzes your animations and builds the searchable database.</p>
+<h3 id="start-processing">Start Processing</h3>
+<ol>
+<li>Scroll to the bottom of your Anim Data inspector</li>
+<li>Click <strong>"Pre-Process"</strong></li>
+<li><strong>Wait</strong> - This can take 5-30 minutes depending on:</li>
+<li>Number of clips</li>
+<li>Clip lengths</li>
+<li>Pose interval setting</li>
+<li>Your computer's performance</li>
+</ol>
+<h3 id="whats-happening">What's Happening</h3>
+<p>During pre-processing, MxM:</p>
+<ol>
+<li><strong>Samples poses</strong> at the specified interval (every 0.1s)</li>
+<li><strong>Calculates trajectories</strong> for each pose</li>
+<li><strong>Builds feature vectors</strong> for fast searching</li>
+<li><strong>Creates acceleration structures</strong> (KD-trees)</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Processing Time</p>
+<ul>
+<li>10 clips @ 0.1s interval: ~5 minutes</li>
+<li>50 clips @ 0.1s interval: ~15-20 minutes</li>
+<li>100 clips @ 0.05s interval: ~30+ minutes</li>
+</ul>
+<p>Go grab coffee - this is a one-time setup!</p>
+</div>
+<h3 id="verify-success">Verify Success</h3>
+<p>After processing:</p>
+<ul>
+<li><strong>Green clips</strong>: Successfully processed</li>
+<li><strong>Red clips</strong>: Errors (check console for details)</li>
+<li><strong>Pose count</strong>: Should show total poses extracted</li>
+</ul>
+<hr />
+<h2 id="step-5-set-up-your-character">Step 5: Set Up Your Character</h2>
+<p>Now let's apply MxM to your character in the scene.</p>
+<h3 id="add-the-character">Add the Character</h3>
+<ol>
+<li><strong>Drag your character</strong> into the scene</li>
+<li>Ensure it has an <strong>Animator</strong> component</li>
+<li>The Animator <strong>Controller</strong> can be empty or basic</li>
+</ol>
+<h3 id="add-mxmanimator-component">Add MxMAnimator Component</h3>
+<ol>
+<li><strong>Select your character</strong> in the Hierarchy</li>
+<li>Click <strong>Add Component</strong></li>
+<li>Search for <strong>"MxMAnimator"</strong></li>
+<li>Click to add</li>
+</ol>
+<h3 id="configure-mxmanimator">Configure MxMAnimator</h3>
+<p>In the MxMAnimator component:</p>
+<h4 id="references">References</h4>
+<ol>
+<li><strong>Anim Data</strong>: Drag your <code>PlayerLocomotion_AnimData</code> asset here</li>
+<li><strong>Animator</strong>: Auto-assigned (or drag your Animator)</li>
+<li><strong>Transform</strong>: Auto-assigned (root transform)</li>
+</ol>
+<h4 id="runtime-settings">Runtime Settings</h4>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Recommended Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Update Mode</strong></td>
+<td>Normal</td>
+<td>Standard update timing</td>
+</tr>
+<tr>
+<td><strong>Blend Time</strong></td>
+<td>0.3 seconds</td>
+<td>Transition smoothness</td>
+</tr>
+<tr>
+<td><strong>Playback Speed</strong></td>
+<td>1.0</td>
+<td>Normal speed</td>
+</tr>
+<tr>
+<td><strong>Search Frequency</strong></td>
+<td>Every Frame</td>
+<td>Best quality (can optimize later)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="step-6-set-up-input-and-trajectory">Step 6: Set Up Input and Trajectory</h2>
+<p>MxM needs to know where the character wants to go.</p>
+<h3 id="add-trajectory-generator">Add Trajectory Generator</h3>
+<ol>
+<li><strong>Select your character</strong></li>
+<li>Click <strong>Add Component</strong></li>
+<li>Search for <strong>"MxMTrajectoryGenerator"</strong></li>
+<li>Click to add</li>
+</ol>
+<h3 id="create-input-profile">Create Input Profile</h3>
+<ol>
+<li><strong>Right-click</strong> in Project window</li>
+<li><strong>Create → MxM → Input Profile</strong></li>
+<li>Name it (e.g., <code>PlayerInputProfile</code>)</li>
+</ol>
+<h3 id="configure-input-profile">Configure Input Profile</h3>
+<p>Select your Input Profile:</p>
+<ol>
+<li><strong>Input Type</strong>: Choose based on your project:</li>
+<li><strong>Unity Input System</strong> (new Input System)</li>
+<li><strong>Legacy Input Manager</strong> (old Input.GetAxis)</li>
+<li>
+<p><strong>Custom</strong> (scripted input)</p>
+</li>
+<li>
+<p><strong>Movement Bindings</strong>:</p>
+</li>
+<li>Horizontal Axis: <code>"Horizontal"</code> (A/D or Left/Right)</li>
+<li>
+<p>Vertical Axis: <code>"Vertical"</code> (W/S or Up/Down)</p>
+</li>
+<li>
+<p><strong>Trajectory Settings</strong>:</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Max Speed</strong></td>
+<td>5.0</td>
+<td>Maximum movement speed</td>
+</tr>
+<tr>
+<td><strong>Acceleration</strong></td>
+<td>10.0</td>
+<td>How quickly speed ramps up</td>
+</tr>
+<tr>
+<td><strong>Responsiveness</strong></td>
+<td>0.8</td>
+<td>Path prediction smoothness</td>
+</tr>
+</tbody>
+</table>
+<h3 id="link-input-to-trajectory-generator">Link Input to Trajectory Generator</h3>
+<ol>
+<li><strong>Select your character</strong></li>
+<li>In <strong>MxMTrajectoryGenerator</strong>:</li>
+<li><strong>Input Profile</strong>: Drag your <code>PlayerInputProfile</code></li>
+<li><strong>MxM Animator</strong>: Drag the MxMAnimator (or auto-link)</li>
+</ol>
+<hr />
+<h2 id="step-7-test-your-character">Step 7: Test Your Character</h2>
+<p>Time to see motion matching in action!</p>
+<h3 id="enter-play-mode">Enter Play Mode</h3>
+<ol>
+<li>Click <strong>Play</strong> in Unity</li>
+<li><strong>Use WASD</strong> or arrow keys to move</li>
+</ol>
+<h3 id="what-to-expect">What to Expect</h3>
+<p><strong>If working correctly:</strong>
+- Character smoothly blends between animations
+- Movement feels responsive to input
+- Transitions happen automatically without setup
+- Foot placement looks natural</p>
+<p><strong>If something's wrong:</strong>
+- Character frozen: Check Anim Data is assigned
+- Jerky movement: Increase Blend Time
+- No response to input: Verify Input Profile settings
+- Sliding feet: Re-check root motion settings on clips</p>
+<hr />
+<h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2>
+<h3 id="character-doesnt-move">Character Doesn't Move</h3>
+<p><strong>Check:</strong>
+- Is Anim Data assigned to MxMAnimator?
+- Is Anim Data fully pre-processed (no red clips)?
+- Is Input Profile assigned to Trajectory Generator?
+- Do animation clips have root motion enabled?</p>
+<h3 id="animations-look-jerky">Animations Look Jerky</h3>
+<p><strong>Solutions:</strong>
+- Increase <strong>Blend Time</strong> (try 0.4-0.5s)
+- Decrease <strong>Pose Interval</strong> (more poses = smoother)
+- Check animation FPS consistency</p>
+<h3 id="character-slidesdoesnt-follow-trajectory">Character Slides/Doesn't Follow Trajectory</h3>
+<p><strong>Check:</strong>
+- Root motion settings on animation clips
+- Trajectory Generator <strong>Max Speed</strong> matches animation speeds
+- Character Controller or Rigidbody isn't conflicting</p>
+<h3 id="poor-performance-low-fps">Poor Performance / Low FPS</h3>
+<p><strong>Optimize:</strong>
+- Increase <strong>Pose Interval</strong> (fewer poses = faster)
+- Reduce <strong>Trajectory Points</strong>
+- Lower <strong>Search Frequency</strong> (every 2-3 frames)
+- Reduce number of joints in skeleton setup</p>
+<hr />
+<h2 id="next-steps">Next Steps</h2>
+<h3 id="expand-your-setup">Expand Your Setup</h3>
+<p>Now that you have basic locomotion working:</p>
+<ol>
+<li><strong>Add more animations</strong> - Jumps, attacks, interactions</li>
+<li><strong>Use Tags</strong> - Create contextual animation sets</li>
+<li><strong>Create Events</strong> - Trigger gameplay events from animations</li>
+<li><strong>Tune quality</strong> - Adjust weights and timings</li>
+</ol>
+<h3 id="learn-more">Learn More</h3>
+<ul>
+<li><strong><a href="../technical-reference/">Technical Reference</a></strong> - Deep dive into how MxM works</li>
+<li><strong><a href="../resources/#animation-authoring-guide">Animation Authoring Guide</a></strong> - Optimize your animation content</li>
+<li><strong><a href="../resources/#user-manual">User Manual</a></strong> - Complete feature reference</li>
+</ul>
+<hr />
+<h2 id="quick-reference-checklist">Quick Reference Checklist</h2>
+<p>Use this checklist for future characters:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Import animation clips with correct settings</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Create Anim Data asset</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Configure skeleton (joints + weights)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Configure trajectory points</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add clips to composite</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Pre-process database (wait for completion)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add MxMAnimator to character</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Assign Anim Data reference</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add MxMTrajectoryGenerator</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Create and assign Input Profile</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Test in Play mode</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Tune blend time and responsiveness</li>
+</ul>
+<hr />
+<h2 id="performance-tips">Performance Tips</h2>
+<h3 id="for-desktopconsole-games">For Desktop/Console Games</h3>
+<ul>
+<li><strong>Pose Interval</strong>: 0.05 - 0.1 seconds</li>
+<li><strong>Search Frequency</strong>: Every frame</li>
+<li><strong>Trajectory Points</strong>: 4-5 points</li>
+<li><strong>Joints</strong>: 8-12 joints (full body)</li>
+</ul>
+<h3 id="for-mobile-games">For Mobile Games</h3>
+<ul>
+<li><strong>Pose Interval</strong>: 0.15 - 0.2 seconds</li>
+<li><strong>Search Frequency</strong>: Every 2-3 frames</li>
+<li><strong>Trajectory Points</strong>: 2-3 points</li>
+<li><strong>Joints</strong>: 4-6 joints (lower body focus)</li>
+</ul>
+<h3 id="for-vr-games">For VR Games</h3>
+<ul>
+<li><strong>Pose Interval</strong>: 0.08 - 0.12 seconds</li>
+<li><strong>Search Frequency</strong>: Every frame (90fps target)</li>
+<li><strong>Trajectory Points</strong>: 3-4 points</li>
+<li><strong>Blend Time</strong>: 0.2s (snappier for responsiveness)</li>
+</ul>
+<hr />
+<div class="admonition success">
+<p class="admonition-title">You're Ready!</p>
+<p>You now have a working motion matching character! Experiment with different settings, add more animations, and explore the advanced features in the <a href="../technical-reference/">Technical Reference</a>.</p>
+</div>
+<hr />
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><strong><a href="../getting-started/">Getting Started Guide</a></strong> - Installation and project setup</li>
+<li><strong><a href="../technical-reference/">Technical Reference</a></strong> - Architecture and theory</li>
+<li><strong><a href="../resources/">Original PDFs</a></strong> - Complete original documentation</li>
+<li><strong><a href="https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity/issues">GitHub Issues</a></strong> - Report problems or get help</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../getting-started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation &amp; Setup">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Installation & Setup
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../user-manual/" class="md-footer__link md-footer__link--next" aria-label="Next: User Manual">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                User Manual
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Originally created by MxM Animation System | Community maintained by Frost Blade Studios
+
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity" target="_blank" rel="noopener" title="GitHub Repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
