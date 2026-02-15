@@ -38,7 +38,9 @@ theme:
 
 nav:
   - Home: index.md
-  - Getting Started: getting-started.md
+  - Getting Started:
+      - Installation & Setup: getting-started.md
+      - Quick Start Tutorial: quick-start.md
   - Documentation:
       - Technical Reference: technical-reference.md
   - Resources:
