@@ -43,6 +43,7 @@ nav:
       - Quick Start Tutorial: quick-start.md
   - Documentation:
       - Technical Reference: technical-reference.md
+      - Animation Authoring Guide: animation-guide.md
       - FAQ: faq.md
   - Resources:
       - Original PDFs: resources.md
