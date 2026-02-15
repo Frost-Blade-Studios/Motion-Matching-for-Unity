@@ -201,13 +201,14 @@ The installation of MxM is non-trivial compared to standard assets. It acts as a
 
 ### 3.1 Unity Version Compatibility
 
+This community fork maintains compatibility with modern Unity versions:
+
 | Version | Recommendation |
 |---------|---------------|
-| **Minimum** | Unity 2018.4 LTS (legacy support) |
-| **Recommended** | 2019.4 LTS, 2020.3 LTS, 2021.3 LTS |
-| **Avoid** | Beta versions (Jobs/Burst APIs are volatile) |
+| **Minimum** | Unity 2020.3 LTS |
+| **Recommended** | Unity 2022.3 LTS or newer |
 
-> ⚠️ **Warning:** Kenneth Claassen explicitly advises against using Unity Beta versions for production with MxM.
+> ⚠️ **Warning:** Avoid using Unity Beta versions for production with MxM, as Jobs/Burst APIs can be volatile. This is the official, single source of truth for version compatibility.
 
 ### 3.2 Mandatory Package Dependencies
 
