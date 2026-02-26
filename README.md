@@ -1,16 +1,16 @@
 # Motion Matching for Unity (Community Fork)
 
-[![Documentation](https://img.shields.io/badge/docs-live-brightgreen)](https://frost-blade-studios.github.io/Motion-Matching-for-Unity/)
+[![Documentation](https://readthedocs.org/projects/motion-matching-for-unity/badge/?version=latest)](https://motion-matching-for-unity.readthedocs.io/en/latest/)
 [![Unity 2022+](https://img.shields.io/badge/Unity-2022%2B-blue)]()
 [![License](https://img.shields.io/badge/license-open--source-orange)]()
 
 ## 📖 Documentation
 
-**[View Full Documentation →](https://frost-blade-studios.github.io/Motion-Matching-for-Unity/)**
+**[View Full Documentation →](https://motion-matching-for-unity.readthedocs.io/en/latest/)**
 
-- **[Getting Started Guide](https://frost-blade-studios.github.io/Motion-Matching-for-Unity/getting-started/)** - Installation & setup
-- **[Technical Reference](https://frost-blade-studios.github.io/Motion-Matching-for-Unity/technical-reference/)** - Deep dive into MxM
-- **[Original PDFs](https://frost-blade-studios.github.io/Motion-Matching-for-Unity/resources/)** - Quick Start, User Manual, FAQ
+- **[Getting Started Guide](https://motion-matching-for-unity.readthedocs.io/en/latest/getting-started/)** - Installation & setup
+- **[Technical Reference](https://motion-matching-for-unity.readthedocs.io/en/latest/technical-reference/)** - Deep dive into MxM
+- **[Original PDFs](https://motion-matching-for-unity.readthedocs.io/en/latest/resources/)** - Quick Start, User Manual, FAQ
 
 ---
 
@@ -44,7 +44,7 @@ We're grateful for this contribution to the Unity community and committed to mai
 2. Click **+** → **Add package from git URL**
 3. Enter: `https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity.git`
 
-For detailed installation instructions, see the [Getting Started Guide](https://frost-blade-studios.github.io/Motion-Matching-for-Unity/getting-started/).
+For detailed installation instructions, see the [Getting Started Guide](https://motion-matching-for-unity.readthedocs.io/en/latest/getting-started/).
 
 ---
 
@@ -69,7 +69,7 @@ Unlike traditional Finite State Machines, Motion Matching:
 
 ## Community & Support
 
-- **Documentation**: [frost-blade-studios.github.io/Motion-Matching-for-Unity](https://frost-blade-studios.github.io/Motion-Matching-for-Unity/)
+- **Documentation**: [frost-blade-studios.github.io/Motion-Matching-for-Unity](https://motion-matching-for-unity.readthedocs.io/en/latest/)
 - **Issues**: [Report bugs or request features](https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity/issues)
 - **Discussions**: [Q&A and community chat](https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity/discussions)
 - **Contributions**: Pull requests are welcome!
