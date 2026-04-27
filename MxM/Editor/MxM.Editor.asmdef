@@ -1,0 +1,20 @@
+{
+    "name": "MxM.Editor",
+    "rootNamespace": "",
+    "references": [
+        "MxM.Runtime",
+        "UTIL.Runtime",
+        "UTIL.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

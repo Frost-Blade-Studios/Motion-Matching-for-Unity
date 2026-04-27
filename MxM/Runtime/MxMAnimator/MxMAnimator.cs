@@ -482,7 +482,11 @@ namespace MxM
                 return;
             }
             
+#if UNITY_6_1_OR_NEWER
+            if (p_animator.updateMode == AnimatorUpdateMode.Fixed)
+#else
             if (p_animator.updateMode == AnimatorUpdateMode.AnimatePhysics)
+#endif
             {
                 p_currentDeltaTime = Time.fixedDeltaTime;
 
@@ -516,7 +520,11 @@ namespace MxM
                 return;
             }
             
+#if UNITY_6_1_OR_NEWER
+            if (p_animator.updateMode != AnimatorUpdateMode.Fixed)
+#else
             if (p_animator.updateMode != AnimatorUpdateMode.AnimatePhysics)
+#endif
             {
                 p_currentDeltaTime = Time.deltaTime;
 

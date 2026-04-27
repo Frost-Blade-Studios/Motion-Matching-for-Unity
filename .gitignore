@@ -62,3 +62,8 @@ crashlytics-build.properties
 # MkDocs build directory
 site/
 
+# Docs folder is not a Unity asset — ignore Unity-generated meta files for it
+docs.meta
+docs/**/*.meta
+mkdocs.yml.meta
+

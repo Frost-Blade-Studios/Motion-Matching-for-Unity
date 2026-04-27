@@ -174,7 +174,11 @@ namespace MxM
         *********************************************************************************************/
         public void FixedUpdate()
         {
-            if(p_animator.updateMode == AnimatorUpdateMode.AnimatePhysics)
+#if UNITY_6_1_OR_NEWER
+            if (p_animator.updateMode == AnimatorUpdateMode.Fixed)
+#else
+            if (p_animator.updateMode == AnimatorUpdateMode.AnimatePhysics)
+#endif
             {
                 UpdatePastTrajectory(Time.fixedDeltaTime);
             }
@@ -190,7 +194,11 @@ namespace MxM
         *********************************************************************************************/
         public void Update()
         {
+#if UNITY_6_1_OR_NEWER
+            if (p_animator.updateMode != AnimatorUpdateMode.Fixed)
+#else
             if (p_animator.updateMode != AnimatorUpdateMode.AnimatePhysics)
+#endif
             {
                 UpdatePastTrajectory(Time.deltaTime);
             }

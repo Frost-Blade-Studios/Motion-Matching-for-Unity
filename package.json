@@ -1,0 +1,26 @@
+{
+  "name": "com.frost-blade-studios.motion-matching",
+  "version": "2.3.3",
+  "displayName": "Motion Matching for Unity",
+  "description": "Community fork of Motion Matching for Unity (MxM) — an advanced animation system using motion matching for fluid, responsive character locomotion.",
+  "unity": "2022.3",
+  "unityRelease": "0f1",
+  "documentationUrl": "https://motion-matching-for-unity.readthedocs.io",
+  "changelogUrl": "https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity/releases",
+  "licensesUrl": "https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity/blob/main/LICENSE",
+  "keywords": [
+    "animation",
+    "motion matching",
+    "character animation",
+    "locomotion"
+  ],
+  "author": {
+    "name": "Frost Blade Studios",
+    "url": "https://github.com/Frost-Blade-Studios"
+  },
+  "dependencies": {
+    "com.unity.mathematics": "1.3.1",
+    "com.unity.collections": "2.4.2",
+    "com.unity.burst": "1.8.29"
+  }
+}
