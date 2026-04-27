@@ -46,6 +46,14 @@ We're grateful for this contribution to the Unity community and committed to mai
 
 For detailed installation instructions, see the [Getting Started Guide](https://motion-matching-for-unity.readthedocs.io/en/latest/getting-started/).
 
+### Demo Scene
+
+A ready-to-run demo scene is available in a separate repo:
+
+**[Motion-Matching-for-Unity-Demo →](https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity-Demo)**
+
+Clone it, open in Unity Hub, and press Play — the package is auto-fetched via Package Manager, no manual setup needed.
+
 ---
 
 ## What is Motion Matching?
