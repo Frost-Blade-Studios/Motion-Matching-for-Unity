@@ -6,7 +6,7 @@ Motion Matching for Unity (MxM) was created by Kenneth Claassen / **Vault Break 
 
 On **11 June 2025**, the original author released MxM free to the community and stepped away from the project, replacing the upstream README with:
 
-> "As I have decided to leave the game industry entirely I am making MxM free. Unfortuantely, as a result, no support can be provided and I will likely not be updating the package further. Please consult the documentation as needed."
+> "As I have decided to leave the game industry entirely I am making MxM free. Unfortuantely [sic], as a result, no support can be provided and I will likely not be updating the package further. Please consult the documentation as needed."
 
 That declaration is recorded upstream in commit `706e5546486c77c42516f5ee21811b6df75973f0`:
 
