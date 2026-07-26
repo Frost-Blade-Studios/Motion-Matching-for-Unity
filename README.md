@@ -2,7 +2,7 @@
 
 [![Documentation](https://readthedocs.org/projects/motion-matching-for-unity/badge/?version=latest)](https://motion-matching-for-unity.readthedocs.io/en/latest/)
 [![Unity 2022+](https://img.shields.io/badge/Unity-2022%2B-blue)]()
-[![License](https://img.shields.io/badge/license-open--source-orange)]()
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 ## 📖 Documentation
 
@@ -94,7 +94,9 @@ Unlike traditional Finite State Machines, Motion Matching:
 
 ## License
 
-This project is open-source. See repository for license details.
+Released under the [MIT License](LICENSE) — free to use in personal and commercial projects.
+
+MxM was originally created by Kenneth Claassen / Vault Break Studios Pty Ltd, who released it free to the community. See [NOTICE.md](NOTICE.md) for attribution and the record of that release.
 
 ---
 

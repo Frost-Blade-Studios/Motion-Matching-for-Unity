@@ -102,7 +102,9 @@ We're grateful for this contribution to the Unity community and committed to mai
 
 ## License
 
-This project is open-source. Please see the repository for license details.
+Released under the [MIT License](https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity/blob/main/LICENSE) — free to use in personal and commercial projects.
+
+MxM was originally created by Kenneth Claassen / Vault Break Studios Pty Ltd, who released it free to the community. See [NOTICE.md](https://github.com/Frost-Blade-Studios/Motion-Matching-for-Unity/blob/main/NOTICE.md) for attribution and the record of that release.
 
 ---
 
