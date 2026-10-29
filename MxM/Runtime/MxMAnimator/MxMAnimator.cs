@@ -482,7 +482,7 @@ namespace MxM
                 return;
             }
             
-#if UNITY_6_1_OR_NEWER
+#if UNITY_6000_1_OR_NEWER
             if (p_animator.updateMode == AnimatorUpdateMode.Fixed)
 #else
             if (p_animator.updateMode == AnimatorUpdateMode.AnimatePhysics)
@@ -520,7 +520,7 @@ namespace MxM
                 return;
             }
             
-#if UNITY_6_1_OR_NEWER
+#if UNITY_6000_1_OR_NEWER
             if (p_animator.updateMode != AnimatorUpdateMode.Fixed)
 #else
             if (p_animator.updateMode != AnimatorUpdateMode.AnimatePhysics)
