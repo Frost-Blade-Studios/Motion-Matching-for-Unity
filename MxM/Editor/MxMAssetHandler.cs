@@ -13,7 +13,7 @@ namespace MxMEditor
         [OnOpenAsset(1)]
         public static bool OpenAsset(int a_instanceId, int a_line)
         {
-#if UNITY_6000_0_OR_NEWER
+#if UNITY_6000_2_OR_NEWER
             Object asset = EditorUtility.EntityIdToObject(a_instanceId);
 #else
             Object asset = EditorUtility.InstanceIDToObject(a_instanceId);
