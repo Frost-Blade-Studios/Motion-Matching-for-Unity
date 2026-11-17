@@ -1853,6 +1853,7 @@ namespace MxM
                                     ChosenPoseId = m_chosenPoseId
                                 };
 
+                                minimaJob.Run();
                                 return m_chosenPoseId[0];
                             }
                         case EFavourTagMethod.Inclusive:
@@ -1875,7 +1876,7 @@ namespace MxM
                             }
                         case EFavourTagMethod.Stacking:
                             {
-                                var minimaJob = new FindMinima_FavourExclusive_EnforceClipChange()
+                                var minimaJob = new FindMinima_FavourStacking_EnforceClipChange()
                                 {
                                     PoseCosts = m_poseCosts,
                                     TrajCosts = m_trajCosts,
@@ -2054,7 +2055,7 @@ namespace MxM
                             }
                         case EFavourTagMethod.Stacking:
                             {
-                                var minimaJob = new FindMinima_FavourExclusive_EnforceClipChange()
+                                var minimaJob = new FindMinima_FavourStacking_EnforceClipChange()
                                 {
                                     PoseCosts = m_poseCosts,
                                     TrajCosts = m_trajCosts,
