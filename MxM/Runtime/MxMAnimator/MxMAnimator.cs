@@ -171,6 +171,7 @@ namespace MxM
         private float m_timeSinceMotionUpdate;          //The time passed since the last motion updated
         private float m_timeSinceMotionChosen;          //The time passed since the last motion was chosen
         private bool m_poseSearchThisFrame;
+        private bool m_warnedNativeAnimDataMismatch; //Limits the FinalizePoseSearch mismatch warning to once per native anim data change
         private float m_poseInterpolationValue = 0f;    //The interpolation value used to calculate the last interpolated pose
         private int m_curChosenPoseId;                  //The id of the chosen pose in the animation database
         private int m_dominantBlendChannel = 0;         //The index of the dominant pose in m_curPoses. i.e. the id of the channel playig the animation with the highest weight
@@ -1479,12 +1480,33 @@ namespace MxM
         *********************************************************************************************/
         private void FinalizePoseSearch(int a_chosenPoseId)
         {
+            if ((uint)a_chosenPoseId >= (uint)CurrentNativeAnimData.UsedPoseIds.Length)
+            {
+                Debug.LogWarning($"MxMAnimator ({name}) - Discarding stale pose search result {a_chosenPoseId}: " +
+                    $"current anim data has {CurrentNativeAnimData.UsedPoseIds.Length} usable poses.");
+                return;
+            }
+
 #if UNITY_EDITOR
             m_lastPoseCost = m_poseCosts[a_chosenPoseId];
             m_lastTrajectoryCost = m_trajCosts[a_chosenPoseId];
             m_lastChosenCost = m_lastPoseCost + m_lastTrajectoryCost;
 #endif
             int bestPoseId = CurrentNativeAnimData.UsedPoseIds[a_chosenPoseId];
+
+            //CurrentNativeAnimData can still belong to the previous anim data when SwapAnimData found no
+            //native set for the current required tags, so its pose ids may not fit CurrentAnimData.Poses.
+            if ((uint)bestPoseId >= (uint)CurrentAnimData.Poses.Length)
+            {
+                if (!m_warnedNativeAnimDataMismatch)
+                {
+                    m_warnedNativeAnimDataMismatch = true;
+                    Debug.LogWarning($"MxMAnimator ({name}) - Discarding pose search result: pose {bestPoseId} is not in " +
+                        $"the current anim data ({CurrentAnimData.Poses.Length} poses). The native anim data does not match " +
+                        $"the current anim data, likely because no native data exists for required tags {RequiredTags}.");
+                }
+                return;
+            }
 
             ref PoseData bestPose = ref CurrentAnimData.Poses[bestPoseId];
 
@@ -2705,6 +2727,7 @@ namespace MxM
             if (CurrentAnimData.NativeAnimData.TryGetValue(RequiredTags, out var nativeAnimData))
             {
                 CurrentNativeAnimData = nativeAnimData;
+                m_warnedNativeAnimDataMismatch = false;
             }
             else
             {
@@ -2888,8 +2911,6 @@ namespace MxM
         {
             if (a_animDataId >= 0 && a_animDataId < m_animData.Length)
             {
-                StopJobs();
-
                 MxMAnimData animData = m_animData[a_animDataId];
 
                 if (CurrentAnimData == animData)
@@ -2901,6 +2922,8 @@ namespace MxM
                     return;
                 }
 
+                //Only a real swap invalidates the pending pose search, so stop jobs after the early-outs
+                StopJobs();
 
                 CancelAnimDataSwapQueue();
 
