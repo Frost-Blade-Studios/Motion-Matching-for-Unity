@@ -40,7 +40,13 @@ namespace MxM
                 m_animator.UpdateMatching_Phase2();
             }
 
-            public override void DoExit() { }
+            public override void DoExit()
+            {
+                //A pose search scheduled in this state is only finalized while in this state. Drop it here so a
+                //search can't outlive the state: left pending, MxMLateUpdate finalized it on the next return to
+                //Matching, against whatever pose list the required tags had swapped to in the meantime.
+                m_animator.StopJobs();
+            }
 
         }//End of class: StateMatching
 
